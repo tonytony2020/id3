@@ -1,9 +1,12 @@
 #!/usr/bin/env python
 #coding:utf8
+import datetime
 import time
-import struct
 import logging
 import os
+import sys
+import struct
+import traceback
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -672,7 +675,10 @@ class Tag(object):
         for f in self.frames:
             data =  f.data
             if self.versionX == 1:
-                data = HelperString.to_uni(data)
+                try:
+                    data = HelperString.to_uni(data)
+                except:
+                    traceback.print_exc(file=sys.stderr)
             # elif self.versionX == 2:
             #     if f.id != "APIC":
             #         data = f.data.decode(f.encoding)
