@@ -24,3 +24,13 @@ Strip ID3 tag from file
 
 This software is licensed under MIT license.
 
+
+## See also
+
+- https://github.com/bogem/id3v2
+
+
+## References
+
+- http://id3.org/
+- https://en.wikipedia.org/wiki/ID3
